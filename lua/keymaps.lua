@@ -8,7 +8,7 @@ local M = {}
 
 function M.setup()
 	-- Default keymap
-	local default_keymap = "<C-f>"
+	local default_keymap = "<C-s>"
 
 	-- Check if the user has defined a custom keymap in their nvimrc
 	local custom_keymap = vim.g.my_spf_plugin_keymap
