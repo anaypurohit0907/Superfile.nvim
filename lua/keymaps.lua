@@ -1,7 +1,7 @@
 -- ~/.config/nvim/lua/plugins/my_spf_plugin/keymaps.lua
 
 local function run_spf()
-	vim.cmd("spf")
+	vim.cmd("term spf")
 end
 
 local M = {}
