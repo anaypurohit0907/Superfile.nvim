@@ -1,6 +1,4 @@
--- ~/.config/nvim/lua/plugins/my_spf_plugin/init.lua
-
-local keymaps = require("plugins.my_spf_plugin.keymaps")
+local keymaps = require("./keymaps.lua")
 
 return {
 	-- Optional: Add dependencies if your plugin requires any
