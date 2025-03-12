@@ -8,7 +8,7 @@ local function spf_run()
 	Bufnr = buf
 
 	api.nvim_buf_set_keymap(Bufnr, "n", "<C-q>", ":bdelete!<CR>", {})
-	api.nvim_buf_set_keymap(Bufnr, "t", "<esc>", [[<C-\><C-n>]], {})
+	api.nvim_buf_set_keymap(Bufnr, "t", "<esc>", "<C-\\><C-n> :bdelete!<CR>", {})
 end
 
 local function spf()
