@@ -8,11 +8,13 @@ Lazy :
 
   just paste `"anaypurohit0907/Superfile.nvim"` in your init file along with the other plugins, then do a Lazy sync.
 
-  the default keybing is <C-s> , to change it add the following to your neovim config:
-  `
-    {
+  the default keybing is `<C-s>` , to change it add the following to your neovim config:
+
+  
+  ```
+{
   "anaypurohit0907/superfile.nvim",
-  main = "superfile",        
+  main = "superfile",
   opts = { key = false },     
   keys = {
     {
@@ -24,8 +26,7 @@ Lazy :
     },
   },
 }
-
-  `
+```
 
 
 
@@ -35,3 +36,5 @@ Usage
   esc to exit.
 
   please refer https://github.com/yorukot/superfile  for all controls of superfile.
+
+  NOTE: this has been tested on neovim using lazy plugin manager only, if you have tested on other managers and facecd any issue please let me know
