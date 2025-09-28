@@ -78,5 +78,15 @@ end
 -- For direct use without setup(), keep a safe default mapping
 -- Comment this out if the plugin is only used via setup()
 -- M.setup()
-
+M.open = spf -- expose the toggle/focus function
+function M.setup(opts)
+	opts = opts or {}
+	local key = opts.key
+	if key == nil then
+		key = "<C-s>"
+	end
+	if key then
+		vim.keymap.set({ "n", "t" }, key, spf, { desc = "Open/Focus spf terminal", silent = true })
+	end
+end
 return M
