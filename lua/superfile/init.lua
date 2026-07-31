@@ -13,9 +13,32 @@ local function is_buf_valid(buf)
 	return buf > 0 and api.nvim_buf_is_valid(buf)
 end
 
+local function find_superfile_command()
+	local commands = {
+		"spf",
+		"superfile",
+	}
+
+	for _, cmd in ipairs(commands) do
+		if vim.fn.executable(cmd) == 1 then
+			return cmd
+		end
+	end
+
+	return nil
+end
+
 local function spf_run()
 	-- Open a terminal running `spf` and enter insert (terminal) mode
-	vim.cmd("terminal spf")
+	local cmd = find_superfile_command()
+
+	if not cmd then
+		vim.notify("Could not find superfile. Tried: spf, superfile", vim.log.levels.ERROR)
+		return
+	end
+
+	vim.cmd("terminal " .. cmd)
+
 	vim.cmd("startinsert")
 
 	local buf = api.nvim_get_current_buf()
